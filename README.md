@@ -18,11 +18,13 @@ Reactive Data Mongo
 Providing interface to interact with Spring Data Mongo in a reactive way, here we're using:
 - **ReactiveMongoRepository** in lieu of MongoRepository
 - **ReactiveMongoTemplate** and not MongoTemplate as before Spring 5
+- **EnableReactiveMongoRepositories** instead of EnableMongoRepositories
+- **AbstractReactiveMongoConfiguration** and not AbstractMongoConfiguration
 
 Tasks list
 ----------
 - [x] Core files with spring-boot
-- [ ] MongoDB configurations
+- [x] MongoDB configurations
 - [ ] Build a reactive API + test
 
 Run
