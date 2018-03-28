@@ -10,6 +10,7 @@ Prerequisites
 Resources
 ---------
 - [Reactive rest service](https://spring.io/guides/gs/reactive-rest-service/)
+- [https://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/html/web-reactive.html](https://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/html/web-reactive.html)
 
 Reactive Web
 ------------
@@ -34,7 +35,6 @@ Tasks list
 - [x] Build a reactive rest API with Annotation-based Programming Model
 - [ ] Article rest service tests
 - [ ] Refactor the API to use a Functional Programming Model(HandlerFunction + RouterFunction)
-
 
 Run
 ---
