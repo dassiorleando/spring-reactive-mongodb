@@ -25,7 +25,9 @@ Tasks list
 ----------
 - [x] Core files with spring-boot
 - [x] MongoDB configurations
-- [ ] Build a reactive API + test
+- [x] Article's Model, Repository and Service
+- [ ] Article's CRUD operations
+- [ ] Build a reactive API + test for the Article model
 
 Run
 ---
