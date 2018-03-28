@@ -4,8 +4,12 @@ Demo project for Spring Boot(Spring 5), Reactive Web and Reactive Data MongoDB
 
 Prerequisites
 -------------
-- Java 1.8
+- JDK 1.8+
 - MongoDB installed
+
+Resources
+---------
+- [Reactive rest service](https://spring.io/guides/gs/reactive-rest-service/)
 
 Reactive Web
 ------------
@@ -26,8 +30,11 @@ Tasks list
 - [x] Core files with spring-boot
 - [x] MongoDB configurations
 - [x] Article's Model, Repository and Service
-- [ ] Article's CRUD operations
-- [ ] Build a reactive API + test for the Article model
+- [x] Article's CRUD operations
+- [x] Build a reactive rest API with Annotation-based Programming Model
+- [ ] Article rest service tests
+- [ ] Refactor the API to use a Functional Programming Model(HandlerFunction + RouterFunction)
+
 
 Run
 ---

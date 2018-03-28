@@ -48,7 +48,7 @@ public class ArticleService {
      * Delete a single article by id
      * @param id
      */
-    public void delete(String id) {
-        articleRepository.deleteById(id);
+    public Mono<Void> delete(String id) {
+        return articleRepository.deleteById(id);
     }
 }
