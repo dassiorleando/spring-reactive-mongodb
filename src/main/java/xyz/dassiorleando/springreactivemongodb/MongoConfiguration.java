@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguratio
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
 /**
- * MongoDB configurations
+ * MongoDB configuration
  * @author dassiorleando
  */
 @Configuration
