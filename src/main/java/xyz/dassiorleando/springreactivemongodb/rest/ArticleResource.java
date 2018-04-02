@@ -1,5 +1,6 @@
 package xyz.dassiorleando.springreactivemongodb.rest;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -20,8 +21,8 @@ public class ArticleResource {
      * @return
      */
     @PostMapping("/article")
-    public Mono<Article> create(@RequestBody Article article) {
-        return articleService.save(article);
+    public Mono<ResponseEntity<Article>> create(@RequestBody Article article) {
+        return articleService.save(article).map(ResponseEntity::ok);
     }
 
     /**
@@ -30,11 +31,11 @@ public class ArticleResource {
      * @return
      */
     @PutMapping("/article")
-    public Mono<Article> update(@RequestBody Article article) {
+    public Mono<ResponseEntity<Article>> update(@RequestBody Article article) {
         if (article.getId() == null) {
             return create(article);
         }
-        return articleService.save(article);
+        return articleService.save(article).map(ResponseEntity::ok);
     }
 
     /**
@@ -42,18 +43,21 @@ public class ArticleResource {
      * @return
      */
     @GetMapping("/article")
-    public Flux<Article> list() {
-        return articleService.findAll();
+    public Flux<ResponseEntity<Article>> list() {
+        return articleService.findAll().map(ResponseEntity::ok);
     }
 
     /**
-     * Find an article by its id
+     * We asynchronously find an article by his Id, return it with a success status if its found
+     * and with the 404 and null object if not
      * @param id
      * @return
      */
     @GetMapping("/article/{id}")
-    public Mono<Article> findById(@PathVariable String id) {
-        return articleService.findOne(id);
+    public Mono<ResponseEntity<Article>> findById(@PathVariable String id) {
+        return articleService.findOne(id)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.status(404).body(null));
     }
 
     /**
@@ -61,7 +65,7 @@ public class ArticleResource {
      * @param id
      */
     @DeleteMapping("/article/{id}")
-    public Mono<Void> deleteById(@PathVariable String id) {
-        return articleService.delete(id);
+    public Mono<ResponseEntity<Void>> deleteById(@PathVariable String id) {
+        return articleService.delete(id).map(ResponseEntity::ok);
     }
 }
